@@ -1,0 +1,19 @@
+doctype html
+html
+    head
+        title #{title}
+        link(href="/style.css" rel="stylesheet" type="text/css")
+    body
+        h3(align="center") Please, enter your login and password
+        ul
+            form(class = "auth" method='post' action=auth)
+                p
+                    label(for = login)
+                    input(name="username" type="username" placeholder="Login")
+                p
+                    label(for = passwd)
+                    input(name="password" type="password" placeholder="Password")
+                p
+                    button(type="submit") Send
+
+include footer.pug
