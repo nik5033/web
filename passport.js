@@ -1,5 +1,4 @@
 const passport = require('passport');
-const CookieStrategy = require('passport-cookie').Strategy;
 const LocalStrategy = require('passport-local').Strategy;
 const Find = require('./database').Find;
 const bcrypt = require('bcryptjs');
