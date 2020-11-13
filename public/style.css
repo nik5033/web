@@ -1,0 +1,192 @@
+button{
+    background-color: white;
+    border:2px solid black;
+    border-radius: 8px;
+}
+
+button:hover{
+    background-color: #42aaff;
+    border:2px solid black;
+    border-radius: 8px;
+}
+
+.main {
+    background-size: 100%;
+    font-family: "Times New Roman";
+    font-size: large;
+}
+
+.task a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #ffffff;
+    padding: 9px 9px;
+    background: -moz-linear-gradient(
+            top,
+            #42aaff 0%,
+            #003366);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#42aaff),
+            to(#003366));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #003366;
+    -moz-box-shadow:
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 1px rgba(255,255,255,0.5);
+    -webkit-box-shadow:
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 1px rgba(255,255,255,0.5);
+    box-shadow:
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 1px rgba(255,255,255,0.5);
+    text-shadow:
+            0px -1px 0px rgba(000,000,000,0.7),
+            0px 1px 0px rgba(255,255,255,0.3);
+    display: inline-block;
+    text-decoration: none;
+}
+
+.task a:hover {
+    padding: 10px 10px;
+    background: -moz-linear-gradient(
+            top,
+            #42aaff 0%,
+            #0d5aa7);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#42aaff),
+            to(#0d5aa7));
+}
+
+.task a:active {
+    background: -moz-linear-gradient(
+            top,
+            #003366 0%,
+            #42aaff);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#003366),
+            to(#42aaff));
+}
+
+.auth input{
+    width: 200px;
+    border-radius: 10px;
+}
+
+.input{
+    width: 200px;
+    border-radius: 10px;
+    margin: 0 auto;
+    position: absolute;
+    left: 45%;
+}
+
+.input input{
+    width: 200px;
+    border-radius: 10px;
+}
+
+.auth{
+    padding: 0.2em 0.2em;
+    color: #892e2e;
+    border-radius: 4px;
+    border:2px black;
+    font-family: "Impact";
+    margin: 0 auto;
+    position: absolute;
+    left: 40%;
+}
+
+.footer a{
+    text-decoration: none;
+    color: black;
+    border-radius: 12px;
+    border:2px solid black;
+}
+
+.footer{
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+}
+
+.answer{
+    background-size: 100%;
+    font-size: large;
+}
+
+.answer span{
+    color: red;
+    font-style: oblique;
+}
+
+.input{
+    width: 200px;
+    border-radius: 10px;
+}
+
+.log_reg {
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
+
+.log_reg a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #ffffff;
+    padding: 9px 9px;
+    background: -moz-linear-gradient(
+            top,
+            #42aaff 0%,
+            #003366);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#42aaff),
+            to(#003366));
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #003366;
+    -moz-box-shadow:
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 1px rgba(255,255,255,0.5);
+    -webkit-box-shadow:
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 1px rgba(255,255,255,0.5);
+    box-shadow:
+            0px 1px 3px rgba(000,000,000,0.5),
+            inset 0px 0px 1px rgba(255,255,255,0.5);
+    text-shadow:
+            0px -1px 0px rgba(000,000,000,0.7),
+            0px 1px 0px rgba(255,255,255,0.3);
+    display: inline-block;
+    text-decoration: none;
+}
+.log_reg a:hover {
+    background: -moz-linear-gradient(
+            top,
+            #42aaff 0%,
+            #0d5aa7);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#42aaff),
+            to(#0d5aa7));
+}
+.log_reg a:active {
+    background: -moz-linear-gradient(
+            top,
+            #003366 0%,
+            #42aaff);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#003366),
+            to(#42aaff));
+}
+
