@@ -4,7 +4,8 @@
   "description": "--BACKEND--",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "sequelize-cli db:migrate && nodemon -L"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "sequelize": "^6.3.5"
   },
   "devDependencies": {
+    "nodemon": "^2.0.6",
     "sequelize-cli": "^6.2.0"
   }
 }
