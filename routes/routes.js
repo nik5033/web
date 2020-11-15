@@ -13,26 +13,32 @@ const IsAuth = function (req, res, next) {
     res.redirect('/login');
 }
 
-/*const Admin = function (username) {
-    data.IsAdmin(username)
-        .then(yes =>{
-            return yes
-            }
-        )
-        .catch(e => console.log("Error: " + e))
-}*/
-
 router.get('/profile',IsAuth, (req, res) => {
-    res.render("profile", {
-        username: req.user.username,
-        admin: req.user.admin.toString()
-    });
+    if(req.user.admin){
+        res.render("profile", {
+            username: req.user.username,
+            admin: req.user.admin.toString(),
+            avatar: "images/admin.jpg"
+        });
+    }
+    else {
+        res.render("profile", {
+            username: req.user.username,
+            admin: req.user.admin.toString(),
+            avatar: "images/user.jpg"
+        });
+    }
 })
 
+router.get('/logout', IsAuth, (req, res) => {
+    req.logout();
+    res.redirect('/');
+})
 
 router.get('/',(req, res) => {
     res.render('main', {
-        title: "Main page"
+        title: "Main page",
+        avatar: 'images/van.jpg'
     });
 });
 
@@ -51,7 +57,7 @@ router.get('/register', async (req,res) => {
 });
 
 router.post('/login',passport.authenticate('login',{
-    successRedirect: '/',
+    successRedirect: '/profile',
     failureRedirect: '/login',
     failureFlash: 'Invalid username or password.'
 }));
