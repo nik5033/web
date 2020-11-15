@@ -5,10 +5,11 @@ html
         link(href="/style.css" rel="stylesheet" type="text/css")
     body
         h2(align="center") Profile
-            p
+            div(class='profile')
                 img(src=avatar alt="Something wrong")
-            p Your profile #{username}
-            p You are admin? #{admin}
-
+                p Username: #{username}
+                p Admin: #{admin}
+            div(class='logout')
+                a(href='logout') Logout
 
 include footer.pug
