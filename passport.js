@@ -11,7 +11,8 @@ const config = require('./config/configs');
 const SignInStrategy = new LocalStrategy({
     usernameField: 'username',
     passwordField: 'password',
-    passReqToCallBack: true
+    passReqToCallBack: true,
+    failureFlash: true
 }, function (username, password, done){
     Find(username)
         .then(user => {

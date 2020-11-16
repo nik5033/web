@@ -8,7 +8,7 @@ const passport = require('passport');
 const Cookie = require('cookie-parser');
 const session = require('express-session');
 require('./models/user');
-//const flash = require('connect-flash');
+const flash = require('connect-flash');
 const config = require('./config/configs')
 
 const PORT = process.env.PORT || 4444
@@ -28,6 +28,7 @@ app.use(session({
 app.use(Cookie());
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended:  true }))
 app.use('/', routes);

@@ -167,6 +167,8 @@ router.put('/rest_api', IsAuth, (req, res) => {
 
 //CREATE
 router.post('/rest_api', IsAuth, (req, res) => {
+    console.log(req.body.username)
+    console.log(req.body.password)
     if(req.body.username && req.body.password){
         if(req.user.admin) {
             data.UserExists(req.body.username)
