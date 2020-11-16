@@ -1,2 +1,3 @@
 .gitignore
 pg_data
+node_modules
