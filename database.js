@@ -41,20 +41,10 @@ async function FindById(id){
     })
 }
 
-async function UserExists(username){
-    let User = await Find(username);
-    return (User !== undefined && User !== null)
-}
-
 async function GetPassword(username){
     let User = await Find(username);
     return User.password
 }
-
-/*async function IsAdmin(username){
-    let User = await Find(username);
-    return User.admin;
-}*/
 
 async function Delete(id){
     let User = await FindById(id);
@@ -78,9 +68,7 @@ exports.Connect = Connect;
 exports.FindById = FindById;
 exports.Find = Find;
 exports.CreateUser = CreateUser;
-exports.UserExists = UserExists;
 exports.GetPassword = GetPassword;
-//exports.IsAdmin = IsAdmin;
 exports.Delete = Delete;
 exports.UpdateUsername = UpdateUsername;
 exports.UpdatePassword = UpdatePassword;

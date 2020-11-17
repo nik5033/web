@@ -1,7 +1,7 @@
 const express = require("express");
 const Connect = require('./database').Connect;
 const Create = require('./database').CreateUser;
-const UserExists = require('./database').UserExists;
+const FindById = require('./database').FindById;
 const routes = require('./routes/routes');
 const bodyParser = require('body-parser');
 const passport = require('passport');
@@ -24,7 +24,6 @@ app.use(session({
     saveUninitialized: true,
     maxAge: 1000 * 3600
 }))
-//app.use(flash());
 app.use(Cookie());
 app.use(passport.initialize());
 app.use(passport.session());
@@ -37,9 +36,9 @@ app.listen(PORT, () =>{
     Connect()
         .then(() =>{
             console.log('Connected');
-            UserExists(config.admin_username)
-                .then(ans => {
-                    if(ans){
+            FindById(config.admin_id)
+                .then(user => {
+                    if(user !== undefined && user !== null){
                         console.log("Admin has been already created.");
                     }
                     else{

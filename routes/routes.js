@@ -128,29 +128,35 @@ router.delete('/rest_api',IsAuth ,(req, res) => {
 //UPDATE
 router.put('/rest_api', IsAuth, (req, res) => {
     if(req.query.id && (req.query.username || req.query.password)){
-        if(req.user.admin){
+        if(req.user.admin || req.query.id == req.user.id){
             data.FindById(req.query.id)
                 .then(user => {
-                    let flag = false;
-                    if(req.query.username){
-                        data.UpdateUsername(req.query.id, req.query.username)
-                            .then(user => {
-                                flag = true
-                            })
-                            .catch(e => {
-                                res.json({success: false, message: e.toString()});
-                            })
+                    if(user !== undefined && user !== null){
+                        //let flag = false;
+                        if(req.query.username){
+                            data.UpdateUsername(req.query.id, req.query.username)
+                                .then(user => {
+                                    //flag = true
+                                })
+                                .catch(e => {
+                                    res.json({success: false, message: e.toString()});
+                                })
+                        }
+                        if(req.query.password){
+                            data.UpdatePassword(req.query.id, req.query.password)
+                                .then(user => {
+                                    //flag = true
+                                })
+                                .catch(e => {
+                                    res.json({success: false, message: e.toString()});
+                                })
+                        }
+                        res.json({success: true});
                     }
-                    if(req.query.password){
-                        data.UpdatePassword(req.query.id, req.query.password)
-                            .then(user => {
-                                flag = true
-                            })
-                            .catch(e => {
-                                res.json({success: false, message: e.toString()});
-                            })
+                    else{
+                        res.json({success: false, message: "User does not exist"});
                     }
-                    res.json({success: true});
+
                 })
                 .catch(e => {
                     res.json({success: false, message: e.toString()});
@@ -171,9 +177,9 @@ router.post('/rest_api', IsAuth, (req, res) => {
     console.log(req.body.password)
     if(req.body.username && req.body.password){
         if(req.user.admin) {
-            data.UserExists(req.body.username)
-                .then(yes => {
-                    if (yes) {
+            data.Find(req.body.username)
+                .then(user => {
+                    if (user !== undefined && user !== null) {
                         res.json({success: false, message: "User exists"})
                     }
                     else{

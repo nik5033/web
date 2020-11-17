@@ -3,5 +3,6 @@ module.exports = {
     user: false,
     admin: true,
     admin_username: 'admin',
-    admin_password: 'admin'
+    admin_password: 'admin',
+    admin_id: 1
 }
